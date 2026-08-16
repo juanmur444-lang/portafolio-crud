@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar categoría</title>
+    <link rel="stylesheet" href="{% static 'categorias/css/estilos.css' %}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>¿Eliminar "{{ categoria.nombre }}"?</h1>
+        <p style="margin-bottom:20px; color:#bbb;">Si esta categoría tiene proyectos asociados, también se eliminarán.</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button class="confirmar" type="submit">Sí, eliminar</button>
+        </form>
+        <p style="margin-top:20px;"><a class="btn" href="{% url 'categorias:lista' %}">Cancelar</a></p>
+    </div>
+</body>
+</html>

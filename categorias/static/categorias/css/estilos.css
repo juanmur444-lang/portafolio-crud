@@ -1,0 +1,29 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+    padding: 40px 20px;
+}
+.contenedor { max-width: 700px; margin: 0 auto; }
+h1 { border-bottom: 3px solid #2d6cff; padding-bottom: 10px; margin-bottom: 30px; }
+.btn {
+    display: inline-block;
+    background: #2d6cff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.btn:hover { background: #1b4fdb; }
+table { width: 100%; border-collapse: collapse; background: #141414; border-radius: 12px; overflow: hidden; }
+th, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #262626; }
+th { color: #bfff00; }
+.acciones a { color: #2d6cff; text-decoration: none; margin-right: 12px; }
+.acciones a.eliminar { color: #ff5858; }
+form { background: #141414; padding: 30px; border-radius: 16px; max-width: 500px; }
+input[type="text"] { width: 100%; padding: 12px; border-radius: 30px; border: 1px solid #333; background: #0b0b0b; color: white; margin-bottom: 16px; }
+button { background: #2d6cff; color: white; border: none; padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; }
+.confirmar { background: #ff5858; }

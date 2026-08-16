@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Proyectos</title>
+    <link rel="stylesheet" href="{% static 'proyectos/css/estilos.css' %}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Mis Proyectos</h1>
+        <a class="btn" href="{% url 'proyectos:crear' %}">+ Nuevo proyecto</a>
+        <a class="btn" href="{% url 'categorias:lista' %}" style="background:#333;">Categorías</a>
+        <div class="grid">
+            {% for proyecto in proyectos %}
+            <div class="tarjeta">
+                <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.titulo }}">
+                <div class="info">
+                    <span class="categoria-tag">{{ proyecto.categoria.nombre }}</span>
+                    <h3>{{ proyecto.titulo }}</h3>
+                    <p>{{ proyecto.descripcion }}</p>
+                    {% if proyecto.enlace %}<p><a href="{{ proyecto.enlace }}" target="_blank" style="color:#bfff00;">Ver enlace</a></p>{% endif %}
+                    <div class="acciones">
+                        <a href="{% url 'proyectos:editar' proyecto.id %}">Editar</a>
+                        <a class="eliminar" href="{% url 'proyectos:eliminar' proyecto.id %}">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>Todavía no hay proyectos. ¡Crea el primero!</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
