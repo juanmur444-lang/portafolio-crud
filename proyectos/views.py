@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Proyecto
 from .forms import ProyectoForm
+def inicio(request):
+    return render(request, 'proyectos/inicio.html')
 
 
 def lista_proyectos(peticion):
