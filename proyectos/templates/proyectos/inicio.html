@@ -88,22 +88,27 @@
         </div>
     </section>
 
-    <section class="contacto">
+       <section class="contacto">
         <h2>CONTÁCTANOS</h2>
 
-        <form>
+        <form method="POST" action="{% url 'mensajes:enviar' %}">
+            {% csrf_token %}
             <input type="text"
+                   name="nombre"
                    placeholder="Nombre Completo"
                    required>
 
             <input type="email"
+                   name="correo"
                    placeholder="Correo Electrónico"
                    required>
 
             <input type="tel"
+                   name="telefono"
                    placeholder="Teléfono">
 
-            <textarea placeholder="Mensaje"
+            <textarea name="mensaje"
+                      placeholder="Mensaje"
                       rows="3"></textarea>
 
             <button type="submit">
