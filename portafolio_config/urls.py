@@ -25,7 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('categorias/', include('categorias.urls')),
     path('proyectos/', include('proyectos.urls')),
+    path('mensajes/', include('mensajes.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
