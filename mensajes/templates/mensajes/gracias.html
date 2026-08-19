@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mensaje enviado</title>
+    <link rel="stylesheet" href="{% static 'mensajes/css/estilos.css' %}">
+</head>
+<body>
+    <div class="centro">
+        <h1>¡Gracias! Tu mensaje fue enviado ✅</h1>
+        <p>Te responderé lo antes posible.</p>
+        <a class="btn" href="{% url 'proyectos:lista' %}">← Volver al inicio</a>
+    </div>
+</body>
+</html>
