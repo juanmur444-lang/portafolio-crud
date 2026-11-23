@@ -49,12 +49,23 @@ python manage.py runserver
 
 Luego abre `http://127.0.0.1:8000` en el navegador.
 
+## Pruebas
+
+El proyecto tiene **20 pruebas automatizadas** hechas con el framework de pruebas de Django. Revisan el CRUD de proyectos y categorías, la validación del enlace y de la imagen, el borrado en cascada y que solo un administrador pueda leer los mensajes de contacto.
+
+Para ejecutarlas:
+
+```
+python manage.py test
+```
+
 ## Qué aprendí
 
 - Organizar un proyecto Django en varias aplicaciones.
 - Relacionar modelos con una llave foránea (proyecto y categoría).
 - Validar formularios y subir imágenes.
 - Usar nombres de rutas con namespace para las redirecciones.
+- Escribir pruebas automatizadas con `TestCase` y el cliente de pruebas de Django.
 
 ## Mejoras pendientes
 
