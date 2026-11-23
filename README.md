@@ -4,6 +4,16 @@ Aplicación web hecha con Django para administrar los proyectos de un portafolio
 
 Práctica académica del Tecnólogo en Análisis y Desarrollo de Software (ADSO), SENA.
 
+## Capturas
+
+**Listado de proyectos**
+
+![Listado de proyectos](docs/capturas/mis-proyectos.png)
+
+**Formulario para crear un proyecto con vista previa de la imagen**
+
+![Formulario para crear un proyecto con vista previa de la imagen](docs/capturas/crear-proyecto.png)
+
 ## Funcionalidades
 
 - Página de inicio.

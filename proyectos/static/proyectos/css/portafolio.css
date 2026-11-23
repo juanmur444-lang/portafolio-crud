@@ -1,0 +1,386 @@
+/* Un reset sencillo para .que todo empiece igual  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b0b0b;
+    color: white;
+    line-height: 1.5;
+}
+
+/*  HERO con imagen de fondo  */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* La imagen de fondo */
+.fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.7);
+}
+
+/* Capa oscura encima para que el texto se lea bien */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* Menú arriba a la derecha */
+.menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    border-bottom-color: #bfff00;
+}
+
+/* Contenido principal: imagen y texto */
+.contenido-izquierda {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin-left: 8%;
+    flex-wrap: wrap;
+    animation: aparecer 0.8s ease-out;
+}
+
+/* Imagen cuadrada de perfil */
+.perfil-cuadrado {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid white;
+    transition: 0.3s;
+}
+
+.perfil-cuadrado:hover {
+    transform: scale(1.02);
+    border-color: #bfff00;
+}
+
+.texto-boton h1 {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.btn-proyectos {
+    background: #2d6cff;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-proyectos:hover {
+    background: #1b4fdb;
+    transform: scale(1.05);
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Sección de introducción */
+.intro {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.frase {
+    font-style: italic;
+    color: #bbb;
+    border-left: 4px solid #bfff00;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+/*  Tarjetas */
+.tarjetas {
+    text-align: center;
+    padding: 40px 20px 80px;
+    background: linear-gradient(145deg, #0f0f0f, #050505);
+}
+
+.tarjetas h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    border-bottom: 3px solid #2d6cff;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.tarjeta {
+    width: 270px;
+    background: white;
+    color: #111;
+    border-radius: 28px;
+    padding: 28px 20px;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-12px);
+}
+
+.tarjeta span {
+    font-size: 44px;
+    background: rgba(0,0,0,0.05);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Colores de cada tarjeta */
+.verde-claro { background: linear-gradient(135deg, #e6ff99, white); }
+.verde-oscuro { background: linear-gradient(135deg, #b0ffe6, white); }
+.azul-claro { background: linear-gradient(135deg, #c0dcff, white); }
+
+/* Formulario de contacto */
+.contacto {
+    background: #eaeaea;
+    color: #111;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.contacto form {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 35px 25px;
+    border-radius: 40px;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    margin: 12px 0;
+    padding: 14px 20px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    font-size: 1rem;
+    background: #fafafa;
+}
+
+.contacto textarea {
+    border-radius: 28px;
+}
+
+.contacto button {
+    width: 100%;
+    background: #2d6cff;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 60px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contacto button:hover {
+    background: #1a4bcb;
+}
+
+/* Pie de página*/
+footer {
+    background: #030303;
+    padding: 60px 30px 40px;
+}
+
+.footer-contenedor {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.info p {
+    color: #aaa;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+
+.enlaces {
+    display: flex;
+    gap: 50px;
+}
+
+.enlaces ul {
+    list-style: none;
+}
+
+.enlaces a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.enlaces a:hover {
+    color: #bfff00;
+}
+
+
+/* 
+RESPONSIVE: para que se vea bien en tablets y móviles */
+/*
+
+/* Tablets (pantallas menores a 800px) */
+@media (max-width: 800px) {
+    .contenido-izquierda {
+        margin-left: 5%;
+        gap: 20px;
+    }
+    .texto-boton h1 {
+        font-size: 1.6rem;
+        white-space: normal;  /* el nombre puede bajar a dos líneas */
+    }
+    .perfil-cuadrado {
+        width: 130px;
+        height: 130px;
+    }
+    .menu {
+        top: 20px;
+        right: 20px;
+        gap: 12px;
+    }
+    .menu a {
+        font-size: 0.85rem;
+    }
+}
+
+/* Móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+    .contenido-izquierda {
+        flex-direction: column;   /* esto. es para q la imagen arriba, texto abajo */
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+    .hero {
+        min-height: 80vh;
+    }
+    .tarjeta {
+        width: 90%;
+        max-width: 280px;
+    }
+    .footer-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+    .enlaces {
+        justify-content: center;
+    }
+    .info p {
+        margin: 0 auto;
+    }
+    .menu a {
+        font-size: 0.75rem;
+    }
+    .texto-boton h1 {
+        font-size: 1.3rem;
+    }
+    .btn-proyectos {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Móviles muy pequeños (menos de 400px) */
+@media (max-width: 400px) {
+    .menu {
+        top: 12px;
+        right: 12px;
+        background: rgba(0,0,0,0.4);
+        padding: 5px 10px;
+        border-radius: 30px;
+    }
+    .menu a {
+        font-size: 0.7rem;
+    }
+    .perfil-cuadrado {
+        width: 90px;
+        height: 90px;
+    }
+    .texto-boton h1 {
+        font-size: 1.1rem;
+    }
+}
